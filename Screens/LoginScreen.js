@@ -1,16 +1,11 @@
-import React from "react";
 import Farm from "../assets/farm.png";
 import {
-  SafeAreaView,
   View,
   Text,
   StyleSheet,
   TextInput,
   TouchableOpacity,
   Image,
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
 } from "react-native";
 import {
   useFonts,
