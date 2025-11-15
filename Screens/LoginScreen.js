@@ -1,16 +1,23 @@
+import React from "react";
 import Farm from "../assets/farm.png";
 import {
+  SafeAreaView,
   View,
   Text,
   StyleSheet,
   TextInput,
   TouchableOpacity,
   Image,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
 } from "react-native";
 import {
   useFonts,
-  Handlee_400Regular,
   Inter_400Regular,
+  Inter_600SemiBold,
+  Inter_500Medium,
+  Baloo2_700Bold,
 } from "@expo-google-fonts/dev";
 import { useNavigation } from "@react-navigation/native";
 
@@ -22,16 +29,21 @@ const LoginScreen = () => {
   };
 
   const [fontsLoaded] = useFonts({
-    Handlee: Handlee_400Regular,
-    Inter: Inter_400Regular, // Assign a custom name to the loaded font style
+    InterRegular: Inter_400Regular,
+    InterSemiBold: Inter_600SemiBold,
+    InterMedium: Inter_500Medium,
+    Baloo2Bold: Baloo2_700Bold,
   });
 
   if (!fontsLoaded) {
-    return null; // Or a loading component like SplashScreen
+    return null;
   }
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.appName}>Farm Easy</Text>
+      <View>
+        <Text style={styles.appName}>Farm Easy</Text>
+        <Text style={styles.tagLine}>Grow Smarter. Sell Faster.</Text>
+      </View>
       <View style={styles.loginContainer}>
         <Text style={styles.loginText}>Login</Text>
         <TextInput
@@ -62,17 +74,22 @@ export default LoginScreen;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    height: "100%",
+    flex: 1,
     borderColor: "black",
     backgroundColor: "darkgreen",
-    fontFamily: "Inter",
   },
   appName: {
-    fontFamily: "Handlee",
+    fontFamily: "Baloo2Bold",
     fontSize: 55,
     color: "white",
     textAlign: "center",
     marginTop: 120,
+  },
+  tagLine: {
+    color: "white",
+    textAlign: "center",
+    fontFamily: "InterMedium",
+    fontSize: 14,
   },
   loginContainer: {
     width: "100%",
@@ -87,27 +104,29 @@ const styles = StyleSheet.create({
   loginText: {
     fontSize: 26,
     color: "black",
-    fontWeight: "bold",
+    fontFamily: "InterSemiBold",
   },
   userInput: {
     backgroundColor: "#fcfcfc88",
     paddingVertical: 11,
     paddingHorizontal: 16,
     borderRadius: 6,
-    marginTop: 30,
+    marginTop: 26,
     fontSize: 14,
     borderColor: "#D1D5DB",
     borderWidth: 1,
+    fontFamily: "InterRegular",
   },
   passwordInput: {
     backgroundColor: "#fcfcfc88",
     paddingVertical: 11,
     paddingHorizontal: 16,
     borderRadius: 6,
-    marginTop: 15,
+    marginTop: 18,
     fontSize: 14,
     borderColor: "#D1D5DB",
     borderWidth: 1,
+    fontFamily: "InterRegular",
   },
   loginButton: {
     backgroundColor: "darkgreen",
@@ -121,10 +140,12 @@ const styles = StyleSheet.create({
   loginButtonText: {
     color: "white",
     fontSize: 14,
+    fontFamily: "InterSemiBold",
   },
   registerText: {
     textAlign: "center",
     marginTop: 16,
+    fontFamily: "InterMedium",
   },
   registerLink: {
     color: "#3B82F6",
