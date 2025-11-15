@@ -21,13 +21,19 @@
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#4CAF50"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.pradeep673.FarmEasy"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1d8fd83d-dc36-429d-a557-c80842124015"
+      }
+    }
   }
 }
