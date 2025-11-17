@@ -67,6 +67,7 @@ const vegetables = [
   },
 ];
 
+
 const Dashboard = () => {
   const [fontsLoaded] = useFonts({
     InterRegular: Inter_400Regular,
@@ -148,7 +149,9 @@ const styles = StyleSheet.create({
     color: "#4B5563",
   },
   salesSection: {
-    backgroundColor: "#dff7e9",
+    backgroundColor: "#F6FFF6",
+    borderWidth:1,
+    borderColor: "#defbdeff",
     paddingVertical: 16,
     paddingHorizontal: 20,
     borderRadius: 10,

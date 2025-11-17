@@ -16,15 +16,15 @@ import {
 } from "@expo-google-fonts/dev";
 import { useNavigation } from "@react-navigation/native";
 
-const LoginScreen = () => {
+const SignupScreen = () => {
   const navigation = useNavigation();
 
   const OnLogin = () => {
     navigation.navigate("Home");
   };
 
-  const goToSignupScreen = () => {
-    navigation.navigate("Signup");
+  const goToLoginScreen = () => {
+    navigation.navigate("Login");
   };
 
   const [fontsLoaded] = useFonts({
@@ -44,7 +44,7 @@ const LoginScreen = () => {
         <Text style={styles.tagLine}>Grow Smarter. Sell Faster.</Text>
       </View>
       <View style={styles.loginContainer}>
-        <Text style={styles.loginText}>Login</Text>
+        <Text style={styles.loginText}>Sign up</Text>
         <TextInput
           style={styles.userInput}
           placeholder="Username"
@@ -56,13 +56,18 @@ const LoginScreen = () => {
           secureTextEntry={true}
           placeholderTextColor="#9CA3AF"
         />
+        <TextInput
+          style={styles.passwordInput}
+          placeholder="Farmer or Customer"
+          placeholderTextColor="#9CA3AF"
+        />
         <TouchableOpacity onPress={OnLogin} style={styles.loginButton}>
-          <Text style={styles.loginButtonText}>Login</Text>
+          <Text style={styles.loginButtonText}>Sign up</Text>
         </TouchableOpacity>
         <Text style={styles.registerText}>
-          Don't have an account?{" "}
-          <Text onPress={goToSignupScreen} style={styles.registerLink}>
-            Sign up
+          Already have an account?{" "}
+          <Text onPress={goToLoginScreen} style={styles.registerLink}>
+            Login
           </Text>
         </Text>
         <Image source={Farm} style={styles.image} />
@@ -71,7 +76,7 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default SignupScreen;
 
 const styles = StyleSheet.create({
   mainContainer: {
